@@ -1,0 +1,11 @@
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\RoomDesigner.exe.config
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\RoomDesigner.exe
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\RoomDesigner.pdb
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.csprojResolveAssemblyReference.cache
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.Properties.Resources.resources
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.csproj.GenerateResource.Cache
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.exe
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.pdb
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.Form1.resources
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\Newtonsoft.Json.dll
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\Newtonsoft.Json.xml
