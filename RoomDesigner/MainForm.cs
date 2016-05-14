@@ -11,15 +11,17 @@ using RoomDesigner.Model;
 
 namespace RoomDesigner
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         Flat flat;
-        public Form1()
+        View view;
+        public MainForm()
         {
             InitializeComponent();
             flat = new Flat();
             JsonParser.LoadJson(out flat, "test.json");
-            MessageBox.Show(flat.coord[2].x.ToString());
+            view = new View(flat);
+            this.Controls.Add(view);
         }
 
     }

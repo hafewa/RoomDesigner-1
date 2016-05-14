@@ -1,6 +1,6 @@
 ﻿namespace RoomDesigner
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,32 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.info = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // info
-            // 
-            this.info.Location = new System.Drawing.Point(141, 12);
-            this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(621, 366);
-            this.info.TabIndex = 0;
-            this.info.Text = "";
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 390);
-            this.Controls.Add(this.info);
-            this.Name = "Form1";
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox info;
     }
 }
 

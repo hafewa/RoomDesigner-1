@@ -6,6 +6,7 @@ c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomD
 c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.csproj.GenerateResource.Cache
 c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.exe
 c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.pdb
-c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.Form1.resources
 c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\Newtonsoft.Json.dll
 c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\bin\Debug\Newtonsoft.Json.xml
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.MainForm.resources
+c:\users\алексей\documents\visual studio 2015\Projects\RoomDesigner\RoomDesigner\obj\Debug\RoomDesigner.View.resources
