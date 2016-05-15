@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DrawingPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // DrawingPanel
+            // 
+            this.DrawingPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.DrawingPanel.Location = new System.Drawing.Point(10, 10);
+            this.DrawingPanel.Name = "DrawingPanel";
+            this.DrawingPanel.Size = new System.Drawing.Size(925, 461);
+            this.DrawingPanel.TabIndex = 0;
+            this.DrawingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawingPanel_Paint);
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.Controls.Add(this.DrawingPanel);
             this.Name = "View";
-            this.Size = new System.Drawing.Size(1000, 500);
+            this.Size = new System.Drawing.Size(948, 630);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.View_Paint);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel DrawingPanel;
     }
 }

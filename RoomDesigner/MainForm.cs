@@ -22,6 +22,7 @@ namespace RoomDesigner
             JsonParser.LoadJson(out flat, "test.json");
             view = new View(flat);
             this.Controls.Add(view);
+            
         }
 
     }

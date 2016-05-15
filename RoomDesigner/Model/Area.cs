@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 namespace RoomDesigner.Model
 {
     public enum ifcCass { flat, room};
+
+
     public abstract class Area
     {
         public string Id { get; set; }
@@ -33,8 +35,9 @@ namespace RoomDesigner.Model
                 return this.ScaledCoord[3].Y - this.ScaledCoord[0].Y;
             }
         }        
-        public const float ConvertingFactor = 3.79F; //for converting mm into px
-        public static int Scale = 70;
+        public const float ConvertingFactor = 3.77952F; //for converting mm into px
+        public static int Scale = 50;
+        
         public List<PointF> ScaledCoord
         {
             get
@@ -47,19 +50,19 @@ namespace RoomDesigner.Model
                     
                     if (c.X == 0)
                     {
-                        tempPoint.X = 0+50;
+                        tempPoint.X = 0;
                     }
                     else
                     {
-                        tempPoint.X = c.X  / Scale * ConvertingFactor+50;
+                        tempPoint.X = c.X  / Scale * ConvertingFactor;
                     }
                     if (c.Y == 0)
                     {
-                        tempPoint.Y = 0+50;
+                        tempPoint.Y = 0;
                     }
                     else
                     {
-                        tempPoint.Y = c.Y / Scale * ConvertingFactor+50;
+                        tempPoint.Y = c.Y / Scale * ConvertingFactor;
                     }
                     tempList.Add(tempPoint);
                 }
