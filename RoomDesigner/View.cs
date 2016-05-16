@@ -100,8 +100,8 @@ namespace RoomDesigner
             e.Graphics.PageUnit = GraphicsUnit.Millimeter;
             Pen p1 = new Pen(Color.Black, 1F);
             Pen p2 = new Pen(Color.Blue, 0.5f);
-            DrawingPanel.Width = Convert.ToInt32((flat.ScaledLengthX * 4)) + 150;
-            DrawingPanel.Height = Convert.ToInt32((flat.ScaledLengthY * 4)) + 150;
+            DrawingPanel.Width = Convert.ToInt32((flat.ScaledLengthX * 4)) + 100;
+            DrawingPanel.Height = Convert.ToInt32((flat.ScaledLengthY * 4)) + 100;
             //drawing the rooms
             
             
@@ -109,7 +109,7 @@ namespace RoomDesigner
             {
                 e.Graphics.PageUnit = GraphicsUnit.Millimeter;
                 e.Graphics.DrawRectangles(p1, new RectangleF[] { new RectangleF(new PointF(room.ScaledTop.X + 8, room.ScaledTop.Y + 8), new SizeF(room.ScaledLengthX, room.ScaledLengthY)) });
-                float delta = 15F;
+                float delta = 12F;
                 PointF ul = new PointF(room.ScaledCoord[0].X+8, room.ScaledCoord[0].Y+8);
                 PointF ur = new PointF(room.ScaledCoord[1].X + 8, room.ScaledCoord[1].Y + 8);
                 PointF _ul = new PointF(ul.X + delta, ul.Y + delta);
@@ -126,6 +126,9 @@ namespace RoomDesigner
                 e.Graphics.DrawPolygon(p1, Lside);
                 e.Graphics.DrawLine(p1, _ul, _ll);
                 e.Graphics.DrawLine(p1, _ur, _lr);
+
+                RectangleF floor = new RectangleF(_ul, new SizeF(lr.X - _ul.X, lr.Y - _ur.Y ));
+                e.Graphics.FillRectangle(Brushes.DimGray, floor);
                 //DrawRoomName(e, room);
                 //DrawArea(e, room);
             }
