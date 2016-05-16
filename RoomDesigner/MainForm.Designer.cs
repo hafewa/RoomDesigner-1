@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ViewSwitcher = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // ViewSwitcher
+            // 
+            this.ViewSwitcher.Location = new System.Drawing.Point(1037, 479);
+            this.ViewSwitcher.Name = "ViewSwitcher";
+            this.ViewSwitcher.Size = new System.Drawing.Size(75, 23);
+            this.ViewSwitcher.TabIndex = 0;
+            this.ViewSwitcher.Text = "to 3D";
+            this.ViewSwitcher.UseVisualStyleBackColor = true;
+            this.ViewSwitcher.Click += new System.EventHandler(this.ViewSwitcher_Click);
             // 
             // MainForm
             // 
@@ -36,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.ViewSwitcher);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -43,6 +55,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button ViewSwitcher;
     }
 }
 

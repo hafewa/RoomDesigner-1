@@ -24,6 +24,11 @@ namespace RoomDesigner
             this.Controls.Add(view);
             
         }
-
+        
+        private void ViewSwitcher_Click(object sender, EventArgs e)
+        {
+            view.IsView2D = !view.IsView2D;
+            view.Refresh();
+        }
     }
 }

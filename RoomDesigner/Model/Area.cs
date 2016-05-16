@@ -34,9 +34,8 @@ namespace RoomDesigner.Model
             {
                 return this.ScaledCoord[3].Y - this.ScaledCoord[0].Y;
             }
-        }        
-        public const float ConvertingFactor = 3.77952F; //for converting mm into px
-        public static int Scale = 50;
+        }                
+        public static int Scale = 75;
         
         public List<PointF> ScaledCoord
         {
@@ -54,7 +53,7 @@ namespace RoomDesigner.Model
                     }
                     else
                     {
-                        tempPoint.X = c.X  / Scale * ConvertingFactor;
+                        tempPoint.X = c.X  / Scale;
                     }
                     if (c.Y == 0)
                     {
@@ -62,7 +61,7 @@ namespace RoomDesigner.Model
                     }
                     else
                     {
-                        tempPoint.Y = c.Y / Scale * ConvertingFactor;
+                        tempPoint.Y = c.Y / Scale;
                     }
                     tempList.Add(tempPoint);
                 }
@@ -71,7 +70,8 @@ namespace RoomDesigner.Model
         }
         public virtual float GetArea()
         {
-            return (ScaledLengthX * ScaledLengthY)*Scale;
+            //m2
+            return (ScaledLengthX * ScaledLengthY)/1000000*Scale*Scale;
         }
         
         public PointF ScaledTop
