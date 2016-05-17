@@ -36,7 +36,7 @@
             this.DrawingPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.DrawingPanel.Location = new System.Drawing.Point(10, 10);
             this.DrawingPanel.Name = "DrawingPanel";
-            this.DrawingPanel.Size = new System.Drawing.Size(925, 461);
+            this.DrawingPanel.Size = new System.Drawing.Size(560, 461);
             this.DrawingPanel.TabIndex = 0;
             this.DrawingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawingPanel_Paint);
             // 

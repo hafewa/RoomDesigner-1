@@ -9,33 +9,35 @@ using System.Threading.Tasks;
 
 namespace RoomDesigner.Model
 {
-    public enum ifcCass { flat, room};
+    public enum ifcCass { flat, room, furniture};
 
 
-    public abstract class Area
+    public abstract class ModelEntity
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string ifcClass { get; set; }
+        public ifcCass ifcClass { get; set; }
         public string Height { get; set; }
         public  List<PointF> coord;
 
 
-        public float ScaledLengthX
+        public static int Scale = 75;
+
+        public virtual float ScaledLengthX
         {
             get
             {
                 return this.ScaledCoord[1].X - this.ScaledCoord[0].X;
             }
         }
-        public float ScaledLengthY
+        public virtual float ScaledLengthY
         {
             get
             {
                 return this.ScaledCoord[3].Y - this.ScaledCoord[0].Y;
             }
         }                
-        public static int Scale = 75;
+        
         
         public List<PointF> ScaledCoord
         {
@@ -68,6 +70,7 @@ namespace RoomDesigner.Model
                 return tempList;
             }
         }
+
         public virtual float GetArea()
         {
             //m2
@@ -78,34 +81,58 @@ namespace RoomDesigner.Model
         {
             get { return ScaledCoord[0]; }
         }
-        //public static PointF operator *(PointF param1, int param2)
-        //{
-        //    return new PointF(x: param1.X * param2, y: param1.Y * param2);
-        //}
+        
     }
 
-    public class Flat : Area
+    public class Flat : ModelEntity
     {    
         public List<Room> Rooms;
 
-        public List<PointF> RoomPoints
-        {
-            get
-            {
-                List<PointF> temp = new List<PointF>();
-                foreach (var room in this.Rooms)
-                {
-                    temp.AddRange(room.ScaledCoord);
-                }
-                return temp;
-            }
-        }
+        //public List<PointF> RoomPoints
+        //{
+        //    get
+        //    {
+        //        List<PointF> temp = new List<PointF>();
+        //        foreach (var room in this.Rooms)
+        //        {
+        //            temp.AddRange(room.ScaledCoord);
+        //        }
+        //        return temp;
+        //    }
+        //}
+
     }
 
-    public class Room : Area
+    public class Room : ModelEntity
     {
+        public List<Furniture> Furniture;
+        public List<SanitaryEngineering> SanitaryEngineering;
+        public List<Door> Doors;
+        public List<Window> Windows;
     }
 
 
-  
+    public class Furniture : ModelEntity
+    {
+
+    }
+    public class SanitaryEngineering: ModelEntity
+    {
+
+    }
+    public class Door : ModelEntity
+    {
+        public override float GetArea()
+        {
+            return 0F;
+        }
+        public bool IsOpenInside { get; set; }
+    }
+    public class Window : ModelEntity
+    {
+
+    }
+
+
+
 }
