@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAAADEAAAAzAAAAMwAAADMAAAAxAAAAHgAAAAAAAAAAAAAAAAAA
+        AAD///8AAAAAAAAAAAAAAAAOAAAAM22LnKp5m7D5eZuw/3ibsP95m7D/eZuw+W2LnKoAAAAzAAAADgAA
+        AAAAAAAA////AAAAAAAAAAASUmh1a3mbsP+pwc//ztzo/9rn8P/a5/D/2ufw/87c6P+pwc//eZuw/1Jo
+        dWsAAAAOAAAAAP///wAAAAAAXHWDfH6gs//J2eX/zd/o/7jT3f+11N7/ttbg/7XU3v+4093/zd/o/8nZ
+        5f9+oLP/Umh1awAAAAD///8AAAAAHnibsP/L3Of/yNzl/7TP2f+51d//RD06/0dCP/9EPTr/udXf/7TP
+        2f/I3OX/y9zn/3ibsP8AAAAe////AG2LnamsxNP/0uTv/7jS3f+6097/vtnk/8fk8P/L6PX/x+Tw/77Z
+        5P+6097/uNLd/9Lk7/+sxNP/bYudqf///wB6nLH52ev2/8rh7//E3+z/xN/s/8jj8f80MDH/Likq/zQw
+        Mf/I4/H/xN/s/8Tf7P/K4e//2ev2/3qcsfn///8AfaG2/73HzP9PSEX/UUtI/19cXP+pu8T/TEdD/01I
+        Rv9MR0P/qbvE/19cXP9RS0j/T0hF/73HzP99obb/////AIGlu/9hXlz/TktJ/1NQT/9QTUz/R0RB/6Cv
+        uP/Y8v//oK64/0dCQf9QTEz/U09P/05LSf9iXl3/gaW7/////wCCp73/RD07/9nX1/8RERH/ERES/9PR
+        zv9BPj7/3/b//z49Pf/U0tL/EBER/xEREv/X1dP/RT48/4Onvf////8Agqe99lhTUf//////BgcJ/wYI
+        Cv//////Kygp/+v9//9JRkX//////wYHCf8GCAr//////zw2Nf+DqL72////AHiZrZ9BQEL/wrqu////
+        9v////H/uK6g/zw5PP/x////OTk6/7qyqP////X////x/7+1pv9BQUT/faC1m////wAhICDmdpKm/z1A
+        Rf8jICH/HRsd/0NDRf/M09z/8fv//8zT2/9DQkX/HRkc/yMgIf89QUb/dpOl/yEhIbX///8AIB8d/0dU
+        XP+Rt87/5/////f////6////9vr///P3/v/2+v//+v////f////n////kbfO/z9JUf8hHx7/////ACQk
+        I+kgHRz/PEZM/3uftP+30+P/4fb//+7////t////7v///+H2//+30+P/e5+0/zxGTf8gHh3/JCQj6f//
+        /wAAAAAAJCMj6SAdHP8hHx+igaW7jXibsPV2ma7/dZit/3aZrv94m7D1gaW7jSEfH6IgHRz/JCQj6QAA
+        AAD///8A8B8AAMAHAACAAwAAgAMAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAB
+        AAAAAQAAgAMAAA==
+</value>
+  </data>
 </root>

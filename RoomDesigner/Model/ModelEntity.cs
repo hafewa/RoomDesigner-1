@@ -16,7 +16,7 @@ namespace RoomDesigner.Model
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public ifcCass? ifcClass { get; set; }
+        public ifcCass ifcClass { get; set; }  //можно заменить на string. Проблем с десериализацией будет меньше
         public string Height { get; set; }
         public  List<PointF> coord;
 
