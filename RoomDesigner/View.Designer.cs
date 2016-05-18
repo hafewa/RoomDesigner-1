@@ -39,6 +39,7 @@
             this.DrawingPanel.Size = new System.Drawing.Size(560, 461);
             this.DrawingPanel.TabIndex = 0;
             this.DrawingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawingPanel_Paint);
+            //this.DrawingPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DrawingPanel_MouseDown);
             // 
             // View
             // 

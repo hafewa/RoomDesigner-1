@@ -19,6 +19,7 @@ namespace RoomDesigner
         {
             InitializeComponent();
             ctrBar.Visible = false;
+            this.DoubleBuffered = true;
         }
         
         private void ViewSwitcherBtn_Click(object sender, EventArgs e)
@@ -76,5 +77,6 @@ namespace RoomDesigner
             }
 
         }
+        
     }
 }

@@ -86,21 +86,7 @@ namespace RoomDesigner.Model
 
     public class Flat : ModelEntity
     {    
-        public List<Room> Rooms;
-
-        //public List<PointF> RoomPoints
-        //{
-        //    get
-        //    {
-        //        List<PointF> temp = new List<PointF>();
-        //        foreach (var room in this.Rooms)
-        //        {
-        //            temp.AddRange(room.ScaledCoord);
-        //        }
-        //        return temp;
-        //    }
-        //}
-
+        public List<Room> Rooms;  
     }
 
     public class Room : ModelEntity
