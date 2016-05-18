@@ -47,7 +47,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.DrawingPanel);
             this.Name = "View";
-            this.Size = new System.Drawing.Size(948, 630);
+            this.Size = new System.Drawing.Size(948, 750);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.View_Paint);
             this.ResumeLayout(false);
 

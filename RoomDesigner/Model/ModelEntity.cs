@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace RoomDesigner.Model
 {
-    public enum ifcCass { flat, room, furniture};
+    public enum ifcCass { flat, room, furniture, sanitaryEngineering, door, window };
 
 
     public abstract class ModelEntity
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public ifcCass ifcClass { get; set; }
+        public ifcCass? ifcClass { get; set; }
         public string Height { get; set; }
         public  List<PointF> coord;
 
 
-        public static int Scale = 75;
+        public static int Scale = 50;
 
         public virtual float ScaledLengthX
         {

@@ -42,8 +42,9 @@ namespace RoomDesigner
             {
                 e.Graphics.PageUnit = GraphicsUnit.Millimeter;
                 DrawFurniture(e, room);
+                DrawSanitaryEngineering(e, room);
                 e.Graphics.DrawRectangles(p, new RectangleF[] { new RectangleF(new PointF(room.ScaledTop.X + 8, room.ScaledTop.Y + 8), new SizeF(room.ScaledLengthX, room.ScaledLengthY)) });
-                DrawRoomName(e, room);
+                DrawName(e, room, Color.Black, 14);
                 DrawArea(e, room);
                 
                 
@@ -52,46 +53,54 @@ namespace RoomDesigner
         }
         private void DrawFurniture(PaintEventArgs e, Room r)
         {
-            Pen p = new Pen(Color.Bisque, 0.5F);
+            Pen p = new Pen(Color.Brown, 0.5F);
             if (r.Furniture != null)
             {
                 foreach (var fur in r.Furniture)
                 {
                     RectangleF rect = new RectangleF(new PointF(fur.ScaledTop.X + 8, fur.ScaledTop.Y + 8), new SizeF(fur.ScaledLengthX, fur.ScaledLengthY));
                     e.Graphics.DrawRectangles(p, new RectangleF[] { rect });
-                    DrawFurName(e, fur);
+                    DrawName(e, fur, Color.Brown, 9);
+                }
+            }
+            
+        }
+
+        private void DrawSanitaryEngineering(PaintEventArgs e, Room r)
+        {
+            Pen p = new Pen(Color.Blue, 0.5F);
+            if (r.SanitaryEngineering != null)
+            {
+                foreach (var san in r.SanitaryEngineering)
+                {
+                    RectangleF rect = new RectangleF(new PointF(san.ScaledTop.X + 8, san.ScaledTop.Y + 8), new SizeF(san.ScaledLengthX, san.ScaledLengthY));
+                    e.Graphics.DrawRectangles(p, new RectangleF[] { rect });
+                    DrawName(e, san, Color.Blue, 9);
                 }
             }
 
-
         }
 
-        private void DrawRoomName(PaintEventArgs e, Room r)
+        private void DrawName(PaintEventArgs e, ModelEntity obj, Color col, int fontSize)
         {
             //e.Graphics.PageUnit = GraphicsUnit.Millimeter;
-            string dString = r.Name;
-            Font dFont = new Font("Arial", 14);
-            SolidBrush dBrush = new SolidBrush(Color.Black);
-            PointF dPoint = new PointF(r.ScaledTop.X + 10, r.ScaledTop.Y + 10);
-            e.Graphics.DrawString(dString,dFont,dBrush,dPoint);
+            string dString = obj.Name;
+            Font dFont = new Font("Arial", fontSize);
+            SolidBrush dBrush = new SolidBrush(col);
+            RectangleF dRect = new RectangleF(new PointF(obj.ScaledTop.X + 8, obj.ScaledTop.Y + 8), new SizeF(obj.ScaledLengthX, obj.ScaledLengthY));
+            //StringFormat dFormat = new StringFormat();
+            //dFormat.FormatFlags = StringFormatFlags;           
+            e.Graphics.DrawString(dString, dFont, dBrush, dRect);
         }
 
-        private void DrawFurName(PaintEventArgs e, Furniture fur)
-        {
-            //e.Graphics.PageUnit = GraphicsUnit.Millimeter;
-            string dString = fur.Name;
-            Font dFont = new Font("Arial", 9);
-            SolidBrush dBrush = new SolidBrush(Color.Black);
-            PointF dPoint = new PointF(fur.ScaledTop.X + 10, fur.ScaledTop.Y + 10);
-            e.Graphics.DrawString(dString, dFont, dBrush, dPoint);
-        }
+
 
 
         private void DrawArea(PaintEventArgs e, Room r)
         {
             //e.Graphics.PageUnit = GraphicsUnit.Millimeter;
-            string dString = $"S = {r.GetArea() : ####.##} кв.м";
-            PointF dPoint = new PointF(r.ScaledTop.X + 10, r.ScaledTop.Y + 15);
+            string dString = $"S = {r.GetArea() : #######.##} кв.м";
+            PointF dPoint = new PointF(r.ScaledTop.X+8 , r.ScaledTop.Y+13 );
             Font dFont = new Font("Arial", 12);
             SolidBrush dBrush = new SolidBrush(Color.Black);
             e.Graphics.DrawString(dString, dFont, dBrush, dPoint);
@@ -144,6 +153,7 @@ namespace RoomDesigner
                 e.Graphics.PageUnit = GraphicsUnit.Millimeter;
 
                 //e.Graphics.DrawRectangles(p1, new RectangleF[] { new RectangleF(new PointF(room.ScaledTop.X + 8, room.ScaledTop.Y + 8), new SizeF(room.ScaledLengthX, room.ScaledLengthY)) });
+               
                 float delta = 12F;
                 PointF ul = new PointF(room.ScaledCoord[0].X+8, room.ScaledCoord[0].Y+8);
                 PointF ur = new PointF(room.ScaledCoord[1].X + 8, room.ScaledCoord[1].Y + 8);
@@ -166,6 +176,7 @@ namespace RoomDesigner
 
                 RectangleF floor = new RectangleF(_ul, new SizeF(lr.X - _ul.X, lr.Y - _ur.Y ));
                 e.Graphics.FillRectangle(Brushes.DimGray, floor);
+                
                 //DrawRoomName(e, room);
                 //DrawArea(e, room);
             }
