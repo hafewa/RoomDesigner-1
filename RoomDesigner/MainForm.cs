@@ -77,6 +77,17 @@ namespace RoomDesigner
             }
 
         }
-        
+
+        private void rightBtn_Click(object sender, EventArgs e)
+        {
+            view.RotateAngle -= 5f;
+            view.Refresh();
+        }
+
+        private void leftBtn_Click(object sender, EventArgs e)
+        {
+            view.RotateAngle += 5f;
+            view.Refresh();
+        }
     }
 }

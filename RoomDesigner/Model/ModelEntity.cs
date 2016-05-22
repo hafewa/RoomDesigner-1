@@ -21,7 +21,7 @@ namespace RoomDesigner.Model
         public  List<PointF> coord;
 
 
-        public static int Scale = 50;
+        public static int Scale = 70;
 
         public virtual float ScaledLengthX
         {

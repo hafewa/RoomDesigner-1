@@ -35,7 +35,12 @@
             this.Scale1_lbl = new System.Windows.Forms.Label();
             this.Scale_tb = new System.Windows.Forms.TextBox();
             this.ctrBar = new System.Windows.Forms.Panel();
+            this.leftBtn = new System.Windows.Forms.Button();
+            this.rightBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rotationBar = new System.Windows.Forms.Panel();
             this.ctrBar.SuspendLayout();
+            this.rotationBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // ViewSwitcherBtn
@@ -95,6 +100,7 @@
             // ctrBar
             // 
             this.ctrBar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ctrBar.Controls.Add(this.rotationBar);
             this.ctrBar.Controls.Add(this.ViewSwitcherBtn);
             this.ctrBar.Controls.Add(this.Scale_tb);
             this.ctrBar.Controls.Add(this.Scale_lbl);
@@ -103,6 +109,48 @@
             this.ctrBar.Name = "ctrBar";
             this.ctrBar.Size = new System.Drawing.Size(142, 588);
             this.ctrBar.TabIndex = 5;
+            // 
+            // leftBtn
+            // 
+            this.leftBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.leftBtn.Location = new System.Drawing.Point(18, 68);
+            this.leftBtn.Name = "leftBtn";
+            this.leftBtn.Size = new System.Drawing.Size(35, 35);
+            this.leftBtn.TabIndex = 6;
+            this.leftBtn.Text = "left";
+            this.leftBtn.UseVisualStyleBackColor = true;
+            this.leftBtn.Click += new System.EventHandler(this.leftBtn_Click);
+            // 
+            // rightBtn
+            // 
+            this.rightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rightBtn.Location = new System.Drawing.Point(94, 68);
+            this.rightBtn.Name = "rightBtn";
+            this.rightBtn.Size = new System.Drawing.Size(35, 35);
+            this.rightBtn.TabIndex = 8;
+            this.rightBtn.Text = "right";
+            this.rightBtn.UseVisualStyleBackColor = true;
+            this.rightBtn.Click += new System.EventHandler(this.rightBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(26, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Rotation";
+            // 
+            // rotationBar
+            // 
+            this.rotationBar.Controls.Add(this.label2);
+            this.rotationBar.Controls.Add(this.leftBtn);
+            this.rotationBar.Controls.Add(this.rightBtn);
+            this.rotationBar.Location = new System.Drawing.Point(0, 127);
+            this.rotationBar.Name = "rotationBar";
+            this.rotationBar.Size = new System.Drawing.Size(142, 153);
+            this.rotationBar.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -118,6 +166,8 @@
             this.Text = "Room Designer v. 1.0";
             this.ctrBar.ResumeLayout(false);
             this.ctrBar.PerformLayout();
+            this.rotationBar.ResumeLayout(false);
+            this.rotationBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -130,6 +180,10 @@
         private System.Windows.Forms.Label Scale1_lbl;
         private System.Windows.Forms.TextBox Scale_tb;
         private System.Windows.Forms.Panel ctrBar;
+        private System.Windows.Forms.Panel rotationBar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button leftBtn;
+        private System.Windows.Forms.Button rightBtn;
     }
 }
 

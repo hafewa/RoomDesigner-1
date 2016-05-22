@@ -34,6 +34,7 @@ namespace RoomDesigner
         }
 
         public bool IsView2D = true;
+        public float RotateAngle = 15;
         private void DrawingPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -45,7 +46,7 @@ namespace RoomDesigner
             }
 
             else
-                Drawd3Dmodel(e);
+                Drawd3Dmodel(e, RotateAngle);
         }
 
 
@@ -162,31 +163,72 @@ namespace RoomDesigner
 
         
         //3D
-        private void Drawd3Dmodel(PaintEventArgs e)
+        private void Drawd3Dmodel(PaintEventArgs e, float angle)
         {
             e.Graphics.PageUnit = GraphicsUnit.Millimeter;
             Pen p1 = new Pen(Color.Black, 0.5F);
             Pen p2 = new Pen(Color.Blue, 0.5f);
-            DrawingPanel.Width = Convert.ToInt32((flat.ScaledLengthX * 4)) + 100;
-            DrawingPanel.Height = Convert.ToInt32((flat.ScaledLengthY * 4)) + 100;
+            DrawingPanel.Width = Convert.ToInt32((flat.ScaledLengthX * 4)) + 300;
+            DrawingPanel.Height = Convert.ToInt32((flat.ScaledLengthY * 4)) + 270;
+
+            float xCenterOfRotation = flat.ScaledLengthX / 2 + 30;
+            float yCenterOfRotation = flat.ScaledLengthY / 2 + 30;
+            e.Graphics.TranslateTransform(xCenterOfRotation, yCenterOfRotation);
+            e.Graphics.RotateTransform(angle);
+            e.Graphics.TranslateTransform(-xCenterOfRotation, -yCenterOfRotation);
 
             //drawing the rooms                       
-            
+
             foreach (var room in flat.Rooms)
             {
+                               
+                
                 e.Graphics.PageUnit = GraphicsUnit.Millimeter;
 
                 //e.Graphics.DrawRectangles(p1, new RectangleF[] { new RectangleF(new PointF(room.ScaledTop.X + 8, room.ScaledTop.Y + 8), new SizeF(room.ScaledLengthX, room.ScaledLengthY)) });
-               
-                float delta = 25F;
-                PointF ul = new PointF(room.ScaledCoord[0].X+8, room.ScaledCoord[0].Y+8);
-                PointF ur = new PointF(room.ScaledCoord[1].X + 8, room.ScaledCoord[1].Y + 8);
-                PointF _ul = new PointF(ul.X + delta, ul.Y + delta);
-                PointF _ur = new PointF(ur.X + delta, ur.Y + delta);                
-                PointF[]  Uside = new PointF[] { ul, ur, _ur, _ul };  //проекция верхняя
+                #region TryToRotate3d
+                //test
+                //float cos = (float)Math.Cos(angle*Math.PI/180);
+                //float sin = (float)Math.Sin(angle * Math.PI / 180);
 
-                PointF ll = new PointF(room.ScaledCoord[3].X + 8, room.ScaledCoord[3].Y + 8);
-                PointF lr = new PointF(room.ScaledCoord[2].X + 8, room.ScaledCoord[2].Y + 8);
+                //float delta = 18F;
+                //PointF ul = new PointF((room.ScaledCoord[0].X + 30)*cos - (room.ScaledCoord[0].Y + 30)*sin, (room.ScaledCoord[0].X + 30) * sin +(room.ScaledCoord[0].Y + 30)*cos);
+                //PointF ur = new PointF((room.ScaledCoord[1].X + 30) * cos - (room.ScaledCoord[1].Y + 30) * sin, (room.ScaledCoord[1].X + 30) * sin + (room.ScaledCoord[1].Y + 30) * cos);
+                //PointF _ul = new PointF((ul.X + delta)*cos - (ul.Y + delta)*sin, (ul.X + delta) * sin + (ul.Y + delta)*cos);
+                //PointF _ur = new PointF((ur.X + delta) * cos - (ur.Y + delta) * sin, (ur.X + delta) * sin + (ur.Y + delta) * cos);
+                //PointF[] Uside = new PointF[] { ul, ur, _ur, _ul };  //проекция верхняя
+
+                //PointF ll = new PointF((room.ScaledCoord[3].X + 30) * cos - (room.ScaledCoord[3].Y + 30) * sin, (room.ScaledCoord[3].X + 30) * sin + (room.ScaledCoord[3].Y + 30) * cos);
+                //PointF lr = new PointF((room.ScaledCoord[2].X + 30) * cos - (room.ScaledCoord[2].Y + 30) * sin, (room.ScaledCoord[2].X + 30) * sin + (room.ScaledCoord[2].Y + 30) * cos);
+                //PointF _ll = new PointF((ll.X + delta) * cos - (ll.Y + delta) * sin, (ll.X + delta) * sin + (ll.Y + delta) * cos);
+                //PointF _lr = new PointF((lr.X + delta) * cos - (lr.Y + delta) * sin, (lr.X + delta) * sin + (lr.Y + delta) * cos);
+                //PointF[] Lside = new PointF[] { ll, lr, _lr, _ll };  //проекция нижняя
+
+                //PointF[] mainSide = new PointF[] { ul, ur, lr, ll };
+                //e.Graphics.DrawPolygon(p1, mainSide);
+                //e.Graphics.DrawPolygon(p1, Uside);
+                //e.Graphics.DrawPolygon(p1, Lside);
+                //e.Graphics.DrawLine(p1, _ul, _ll);
+                //e.Graphics.DrawLine(p1, _ur, _lr);
+
+
+
+                //RectangleF floor = new RectangleF(_ul, new SizeF(lr.X - _ul.X, lr.Y - _ur.Y));
+                //e.Graphics.FillRectangle(Brushes.DimGray, floor);
+                //test
+                #endregion
+
+                #region original
+
+                float delta = 18F;
+                PointF ul = new PointF(room.ScaledCoord[0].X + 30, room.ScaledCoord[0].Y + 30);
+                PointF ur = new PointF(room.ScaledCoord[1].X + 30, room.ScaledCoord[1].Y + 30);
+                PointF _ul = new PointF(ul.X + delta, ul.Y + delta);
+                PointF _ur = new PointF(ur.X + delta, ur.Y + delta);
+                PointF[] Uside = new PointF[] { ul, ur, _ur, _ul };  //проекция верхняя
+
+                PointF ll = new PointF(room.ScaledCoord[3].X + 30, room.ScaledCoord[3].Y + 30);
+                PointF lr = new PointF(room.ScaledCoord[2].X + 30, room.ScaledCoord[2].Y + 30);
                 PointF _ll = new PointF(ll.X + delta, ll.Y + delta);
                 PointF _lr = new PointF(lr.X + delta, lr.Y + delta);
                 PointF[] Lside = new PointF[] { ll, lr, _lr, _ll };  //проекция нижняя
@@ -198,13 +240,16 @@ namespace RoomDesigner
                 e.Graphics.DrawLine(p1, _ul, _ll);
                 e.Graphics.DrawLine(p1, _ur, _lr);
 
-                RectangleF floor = new RectangleF(_ul, new SizeF(lr.X - _ul.X, lr.Y - _ur.Y ));
+
+                RectangleF floor = new RectangleF(_ul, new SizeF(lr.X - _ul.X, lr.Y - _ur.Y));
                 e.Graphics.FillRectangle(Brushes.DimGray, floor);
-                                
+
+                #endregion
+
                 //DrawRoomName(e, room);
                 //DrawArea(e, room);
-            }            
-
+            }
+            //e.Graphics.ResetTransform();
         }
 
 
